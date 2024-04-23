@@ -1,4 +1,5 @@
 /*code making by TaiLe*/
+// find the SNT SCP SDX from 1 to n (0<n<1000)
 #include <stdio.h>
 #include <conio.h>
 #include <math.h>
@@ -10,7 +11,7 @@ void SDX(int n);
 void SDX2CS(int n);
 int main(){
 	printf("nhap 1 so 0<n<999: "); scanf("%d",&n);
-	while (n<=0 && n>=1000){
+	while (n<=0 || n>=1000){
 		printf("vui long nhap lai so 0<n<1000"); scanf("%d",&n);
 	}
 	printf("cac so nguyen to tu 1 den %d la: ",n); SNT(n);
