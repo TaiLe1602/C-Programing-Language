@@ -8,15 +8,18 @@ int n=0;
 void SNT(int n);
 void SCP(int n);
 void SDX(int n);
+void SDX2(int n);
+int reverse(int n);
 void SDX2CS(int n);
 int main(){
 	printf("nhap 1 so 0<n<999: "); scanf("%d",&n);
 	while (n<=0 || n>=1000){
-		printf("vui long nhap lai so 0<n<1000"); scanf("%d",&n);
+		printf("vui long nhap lai so 0<n<1000: "); scanf("%d",&n);
 	}
 	printf("cac so nguyen to tu 1 den %d la: ",n); SNT(n);
 	printf("\ncac so chinh phuong tu 1 den %d la: ",n); SCP(n); printf("\n");
-	printf("cac so doi xung tu 1 den %d la: ",n); SDX(n);
+	printf("cac so doi xung tu 1 den %d la: ",n); SDX(n); printf("\n");
+	printf("cac so doi xung tu 1 den %d cach 2 la: ",n); SDX2(n);
 	getch();
 	
 }
@@ -63,4 +66,19 @@ void SDX(int n){
 			}
 		}
 	}
+}
+void SDX2(int n){
+	for(int i=10; i<=n;i++){
+		if(i==reverse(i)){
+			printf("%d ",i);
+		}
+	}
+}
+int reverse(int n){
+	int reversenum=0;
+	while(n>0){
+		reversenum = reversenum*10+n%10;
+		n=n/10;
+	}
+	return reversenum;
 }
