@@ -1,3 +1,4 @@
+/*code making by TaiLe*/
 #include <stdio.h>
 #include <conio.h>
 #include <math.h>
@@ -6,9 +7,16 @@ int n=0;
 void SNT(int n);
 void SCP(int n);
 void SDX(int n);
+void SDX2CS(int n);
 int main(){
-	printf("nhap 1 so tu 0 den 1000: "); scanf("%d",&n);
-	printf("cac so nguyen to tu 0 den %d la: ",n); SNT(n);
+	printf("nhap 1 so 0<n<999: "); scanf("%d",&n);
+	while (n<=0 && n>=1000){
+		printf("vui long nhap lai so 0<n<1000"); scanf("%d",&n);
+	}
+	printf("cac so nguyen to tu 1 den %d la: ",n); SNT(n);
+	printf("\ncac so chinh phuong tu 1 den %d la: ",n); SCP(n); printf("\n");
+	printf("cac so doi xung tu 1 den %d la: ",n); SDX(n);
+	getch();
 	
 }
 
@@ -21,7 +29,37 @@ void SNT(int n){
 		}
 	}
 	if(count == 2){
-		printf("%d",i);
+		printf("%d ",i);
 	}
 }
 };
+
+void SCP(int n){
+	for (int i =1; i<=n; i++){
+		if( i*i <=n){
+			printf("%d ",i*i);
+		} else {
+			break;
+		}
+	}
+}
+void SDX2CS(int n){
+	for(int i=10; i<=n;i++){
+		if(i==((i%10)*10+i/10)){
+			printf("%d ",i);
+		}
+	}
+}
+void SDX(int n){
+	if(n<100){
+		SDX2CS(n);
+	}
+	else {
+		SDX2CS(100);
+		for(int i =100; i<=n;i++){
+			if(i==((i%10)*100+((i/10)%10)*10+i/100)){
+				printf("%d ",i);
+			}
+		}
+	}
+}
