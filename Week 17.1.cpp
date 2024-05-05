@@ -16,7 +16,7 @@ int main(){
 	} 
 	// nhap mang
 	for(int i=0; i<n;i++){
-		printf("nhap phan tu thu %d trong mang: ",i); scanf("%d",&a[i]);
+		printf("nhap phan tu thu %d trong mang: ",i+1); scanf("%d",&a[i]);
 	}
 	// xuat so nguyen to trong mang                      
 	printf("cac so nguyen to trong mang la: "); 
@@ -25,6 +25,7 @@ int main(){
 			printf("%d ", a[i]);
 		}
 	}
+	// xuat cac so chinh phuong trong mang
 	printf("\n");
 	printf("cac so chinh phuong trong mang la: "); 
 	for(int i=0; i<n;i++){
@@ -32,6 +33,7 @@ int main(){
 			printf("%d ",a[i]);
 		}
 	}
+	// xuat cac so doi xung trong mang
 	printf("\n");
 	printf("cac so doi xung trong mang la: ");
 	for(int i=0; i<n;i++){
@@ -41,18 +43,17 @@ int main(){
 			printf("%d ",a[i]);
 		} 
 	} 
-	/*printf("cac so doi xung tu 1 den %d cach 2 la: ",n); SDX2(n);*/
 	getch();
 	
 }
 
 int SNT(int n){
 	int count =0;
-	for(int j =1; j<=n;j++){
+	for(int j =2; j<=n;j++){
 		if(n%j==0){count++;
 		}
 	}
-	if(count == 2 || n==1){
+	if(count == 2 ){
 		return 1;
 	} else {return 0;
 	}
